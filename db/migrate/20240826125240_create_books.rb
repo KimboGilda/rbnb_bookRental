@@ -6,8 +6,6 @@ class CreateBooks < ActiveRecord::Migration[7.1]
       t.text :genre
       t.float :price
       t.boolean :availability
-      t.references :user, null: false, foreign_key: true
-
       t.timestamps
     end
   end
