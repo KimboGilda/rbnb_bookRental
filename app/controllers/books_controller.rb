@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :destroy]
+  before_action :set_book, only: [:show, :destroy]
 
   def index
     @books = Book.all
@@ -14,14 +14,14 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
-  def create
-    @book = Book.new(book_params)
-    if @book.save
-      redirect_to book_path(@book)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
+  #def create
+  #  @book = Book.new(book_params)
+  #  if @book.save
+  #    redirect_to book_path(@book)
+  #  else
+  #    render :new, status: :unprocessable_entity
+  #  end
+  #end
 
   def destroy
     @book.destroy
