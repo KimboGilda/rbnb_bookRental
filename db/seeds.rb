@@ -9,6 +9,8 @@
 #   end
 
 puts "Destroying all data"
+Booking.destroy_all
+Review.destroy_all
 Book.destroy_all
 User.destroy_all
 puts "All data destroyed"
@@ -45,6 +47,7 @@ book_01 = Book.create!(
     availability: true,
     user: user_01
   )
+
 
   book_03 = Book.create!(
     title: 'The Impossible',
@@ -85,15 +88,15 @@ book_01 = Book.create!(
   Booking.create!(
     start_date: Date.today,
     end_date: Date.today + 3.days,
-    user_id: 40,
-    book_id: 91
+    user: user_01,
+    book: book_05
   )
 
 
-#   Booking.create!(
-#     start_date: "2024-08-23 16:13:09.809807 +0200",
-#     end_date: "2024-08-26 16:53:09.809807 +0200",
-#     user: user_02,
-#     book: book_01
-#   )
+# #   Booking.create!(
+# #     start_date: "2024-08-23 16:13:09.809807 +0200",
+# #     end_date: "2024-08-26 16:53:09.809807 +0200",
+# #     user: user_02,
+# #     book: book_01
+# #   )
 
