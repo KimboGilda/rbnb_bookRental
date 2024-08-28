@@ -4,7 +4,7 @@
     <!-- Image section -->
     <div class="book-image" style="flex: 1 1 40%; margin-right: 20px;">
       <!-- Imagen del libro (placeholder por ahora) -->
-      <img src="IMG_URL" alt="Book Image" style="width: 100%; border-radius: 10px;">
+      <%# <img src="IMG_URL" alt="Book Image" style="width: 100%; border-radius: 10px;"> %>
     </div>
 
     <!-- Info section -->
@@ -26,24 +26,41 @@
 
       <!-- Button section -->
       <div class="button-group" style="display: flex; gap: 10px; margin-top: 20px;">
-        <%= link_to 'Back to overview', books_path, style: "padding: 10px 20px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none; display: inline-block;" %>
+      <%= link_to 'Back to overview', books_path, style: "padding: 10px 20px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none; display: inline-block;" %>
 
-        <% button_color = @book.availability ? '#28a745' : '#6c757d' %>
-        <% clickable = @book.availability ? '' : 'pointer-events: none;' %>
+      <% button_color = @book.availability ? '#28a745' : '#6c757d' %>
+      <% clickable = @book.availability ? '' : 'pointer-events: none;' %>
 
         <%= link_to 'Make a booking', new_book_booking_path(@book), style: "padding: 10px 20px; color: white; background-color: #{button_color}; border-radius: 5px; text-decoration: none; display: inline-block; #{clickable}" %>
+
+        <!-- adding a delete button and perhaps we need an edit btn -->
+        <%= link_to content_tag(:i, "", class: "fa-solid fa-pencil"), edit_book_path(@book) %>
+        <%= link_to content_tag(:i, "", class: "fa-solid fa-trash"),
+          book_path(@book),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
       </div>
     </div>
   </div>
 
   <!-- Reviews section -->
-  <div class="reviews" style="margin-top: 40px;">
-    <h3 style="margin-bottom: 15px;">Reviews:</h3>
-    <!-- Aquí se mostrarán las reviews -->
+  <div id="reviews" class="reviews" data-review-form-target="reviews" style="margin-top: 40px;">
     <% @book.reviews.each do |review| %>
-      <div class="review" style="padding: 10px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff; margin-bottom: 10px;">
-        <p><%= review.content %></p>
-      </div>
+      <%= render partial: "reviews/review", locals: { review: review } %>
     <% end %>
   </div>
+  
+<div data-controller="review-form" id="review_form" style="margin-top:20px">
+    <button data-action="click->review-form#toggle" style="margin-left: auto; padding: 10px 20px; color: white; background-color: #D7C3F1; border-radius: 5px; border: none;">Add a review</button>
+    <div data-review-form-target="form" class="d-none">
+      <%= form_with(model: [@book, @book.reviews.new], data: { action: "turbo:submit-end->review-form#submitEnd" }) do |form| %>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <%= form.label :content, "Your Review" %>
+          <%= form.text_area :content, rows: 4, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
+        </div>
+        <%= form.submit "Submit Review", style: "padding: 10px 20px; color: white; background-color: #28a745; border-radius: 5px; border: none;" %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
