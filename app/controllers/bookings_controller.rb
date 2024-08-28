@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @books = Book.all
-    @bookings = Booking.all
+    @bookings = current_user.bookings
     @users = User.all
   end
   def new

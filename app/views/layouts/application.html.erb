@@ -10,11 +10,15 @@
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
+   <div class="container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' %>
     <%= yield %>
+    </div>
   </body>
 </html>
