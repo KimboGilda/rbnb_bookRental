@@ -25,7 +25,6 @@ class BooksController < ApplicationController
   end
 
   def create
-
     @book = Book.new(book_params)
     @book.user = current_user
     if @book.save
@@ -36,8 +35,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
-    redirect_to book_path, status: :see_other
+    redirect_to books_path, status: :see_other
   end
 
   private

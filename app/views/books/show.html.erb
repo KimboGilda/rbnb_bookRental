@@ -35,7 +35,7 @@
 
         <!-- adding a delete button and perhaps we need an edit btn -->
         <%= link_to "x",
-          books_path(@book),
+          book_path(@book),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
         <%= link_to "Edit",
