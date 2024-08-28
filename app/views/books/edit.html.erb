@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Editing "<%= @book.title %>"</h1>
+  <%= simple_form_for(@book) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :genre %>
+  <%= f.input :price %>
+  <%= f.input :availability,
+            :as => :select,
+            :collection => [['Not available',false],['Available',true]],
+            :include_blank => false,
+            :label => "Type" %>
+  <%= f.submit %>
+<% end %>
+</div>

@@ -2,8 +2,19 @@
   <h1>Bookings</h1>
   <ul>
     <% @bookings.each do |booking| %>
-      <li><%= Book.find(booking.book_id).title %> is booking for <%= booking.start_date %> - <%= booking.end_date %> by user <%= User.find(booking.user_id).first_name %> <%= User.find(booking.user_id).last_name  %></li>
-      <% end %>
+      <li>
+        <%= Book.find(booking.book_id).title %>
+        is booking for
+        <%= booking.start_date %> -
+        <%= booking.end_date %> by user
+        <%= User.find(booking.user_id).first_name %>
+        <%= User.find(booking.user_id).last_name  %>
+        <%= link_to "x",
+          booking_path(booking),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </li>
+    <% end %>
   </ul>
   <%= link_to "Back to book list", books_path %>
 </div>

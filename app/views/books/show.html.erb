@@ -32,6 +32,15 @@
         <% clickable = @book.availability ? '' : 'pointer-events: none;' %>
 
         <%= link_to 'Make a booking', new_book_booking_path(@book), style: "padding: 10px 20px; color: white; background-color: #{button_color}; border-radius: 5px; text-decoration: none; display: inline-block; #{clickable}" %>
+
+        <!-- adding a delete button and perhaps we need an edit btn -->
+        <%= link_to "x",
+          books_path(@book),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+        <%= link_to "Edit",
+          edit_book_path(@book)
+        %>
       </div>
     </div>
   </div>
