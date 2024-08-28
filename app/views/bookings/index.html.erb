@@ -1,9 +1,17 @@
-<div class="container">
-  <h1>Bookings</h1>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li><%= Book.find(booking.book_id).title %> is booking for <%= booking.start_date %> - <%= booking.end_date %> by user <%= User.find(booking.user_id).first_name %> <%= User.find(booking.user_id).last_name  %></li>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="text-primary" class="mb-0">All my bookings</h1>
+  </div>
+
+    <ul>
+      <% @bookings.each do |booking| %>
+        <li>
+          <h4><%= booking.book.title %></h4>
+          <div class="booking-title">
+           <p>Starts in: <%= booking.start_date %></p>
+           <p>Ends in : <%= booking.end_date %></p>
+          </div>
+        </li>
       <% end %>
-  </ul>
-  <%= link_to "Back to book list", books_path %>
+    </ul>
 </div>
