@@ -17,12 +17,16 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.book = @book
     if @booking.save
-      redirect_to book_bookings_path(@book)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
-    # @booking.save
-    # redirect_to book_bookings_path(@book)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private

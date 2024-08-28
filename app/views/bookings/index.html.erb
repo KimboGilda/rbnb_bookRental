@@ -1,17 +1,28 @@
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h1 class="text-primary" class="mb-0">All my bookings</h1>
+<div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+  <div class="book-card" style="display: flex; flex-wrap: wrap; background-color: #f9f9f9; border: 1px solid #ddd; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <!-- Info section -->
+    <div class="book-info" style="flex: 1 1 60%; display: flex; flex-direction: column; justify-content: space-between;">
+        <h1>Bookings</h1>
+        <ul>
+          <% @bookings.each do |booking| %>
+            <li>
+              <%= Book.find(booking.book_id).title %>
+              is booking for
+              <%= booking.start_date %> -
+              <%= booking.end_date %> by user
+              <%= User.find(booking.user_id).first_name %>
+              <%= User.find(booking.user_id).last_name  %>
+              <%= link_to content_tag(:i, "", class: "fa-solid fa-trash"),
+                booking_path(booking),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+              %>
+            </li>
+          <% end %>
+        </ul>
+      <!-- Button section -->
+        <div class="button-group" style="display: flex; gap: 10px; margin-top: 20px;">
+          <%= link_to "Back to book list", books_path %>
+        </div>
+    </div>
   </div>
-
-    <ul>
-      <% @bookings.each do |booking| %>
-        <li>
-          <h4><%= booking.book.title %></h4>
-          <div class="booking-title">
-           <p>Starts in: <%= booking.start_date %></p>
-           <p>Ends in : <%= booking.end_date %></p>
-          </div>
-        </li>
-      <% end %>
-    </ul>
 </div>
