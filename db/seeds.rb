@@ -83,7 +83,7 @@ book_01 = Book.create!(
     price: 20,
     availability: false,
     user: user_02
-  )3
+  )
 
   Booking.create!(
     start_date: Date.today,
