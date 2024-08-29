@@ -4,7 +4,17 @@
     <!-- Image section -->
     <div class="book-image">
       <!-- Imagen del libro (placeholder por ahora) -->
-      <%# <img src="IMG_URL" alt="Book Image" style="width: 100%; border-radius: 10px;"> %>
+         <!--<img src="<%= @book.cover_image %>" alt="Book Image" style="width: 180px; height: 270px;  border-radius: 10px;"> -->
+    
+    <% if @book.photo.attached? %>
+
+      <%= cl_image_tag(@book.photo.key, alt: @book.title, style: "width: 180px; height: 270px; border-radius: 10px;")  %>
+
+    <% else %>
+      <img src="<%= @book.cover_image %>" alt="Book Image" style="width: 180px; height: 270px;  border-radius: 10px;">
+
+    <% end %>
+
     </div>
 
     <!-- Info section -->
@@ -49,7 +59,7 @@
       <%= render partial: "reviews/review", locals: { review: review } %>
     <% end %>
   </div>
-  
+
 <div data-controller="review-form" id="review_form" style="margin-top:20px">
     <button data-action="click->review-form#toggle", class="button-review-toggle">Add a review</button>
     <div data-review-form-target="form" class="d-none">
@@ -63,4 +73,3 @@
     </div>
   </div>
 </div>
-

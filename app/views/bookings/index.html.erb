@@ -4,6 +4,7 @@
     <div class="book-info" style="flex: 1 1 60%; display: flex; flex-direction: column; justify-content: space-between;">
         <h1>Bookings</h1>
         <ul>
+       
           <% @bookings.each do |booking| %>
             <li>
               <%= Book.find(booking.book_id).title %>
