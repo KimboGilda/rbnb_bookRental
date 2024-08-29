@@ -1,0 +1,109 @@
+/* Container and Page Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1.text-primary {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+.btn.btn-book {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-flat:hover {
+  background-color: #0056b3; /* Darker shade of blue for hover effect */
+  color: #fff;
+}
+
+// Search bar
+form.d-flex {
+  width: 100%;
+}
+
+.form-control {
+  border-radius: 20px;
+  padding: 10px 10px;
+  border: 1px solid #007bff; /* Primary Bootstrap blue color */
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0056b3;
+  box-shadow: none;
+}
+
+.btn.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background-color: #094b92;
+}
+
+// Book Card Styling
+.card-books {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Make the card take up full width of the column */
+  min-height: 250px; /* Ensure enough height for the content */
+}
+
+.card-books .card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-books .card-text {
+  font-size: 15px;
+}
+
+.card-books .card-price {
+  font-size: 13px;
+  color: rgb(81, 14, 182);
+}
+
+.card-books .card-body {
+  padding: 20px;
+}
+
+.card-books:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Column Adjustment */
+.col-sm-3.mb-5 {
+  flex: 0 0 30%; /* Adjust the column width to make the cards wider */
+  max-width: 30%;
+}
+
+h4.card-title {
+  font-size: 1.25rem; /* Adjust font size for better fit */
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem; /* Ensure text size is readable within the wider card */
+}
