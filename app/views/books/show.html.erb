@@ -1,19 +1,19 @@
-<div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+<div class="container-book">
   <div class="book-card" style="display: flex; flex-wrap: wrap; background-color: #f9f9f9; border: 1px solid #ddd; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
 
     <!-- Image section -->
-    <div class="book-image" style="flex: 1 1 40%; margin-right: 20px;">
+    <div class="book-image">
       <!-- Imagen del libro (placeholder por ahora) -->
       <%# <img src="IMG_URL" alt="Book Image" style="width: 100%; border-radius: 10px;"> %>
     </div>
 
     <!-- Info section -->
-    <div class="book-info" style="flex: 1 1 60%; display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="book-info">
       <div>
-        <h2 style="margin-bottom: 15px; color: #333; font-weight: bold;"><%= @book.title %></h2>
-        <p style="font-size: 16px; color: #555;">by <strong style="color: #333;"><%= @book.author %></strong></p>
-        <p style="font-size: 16px; color: #555;">Genre: <strong style="color: #333;"><%= @book.genre %></strong></p>
-        <p style="font-size: 16px; color: #555;">Price: <strong style="color: #333;"><%= @book.price %></strong> $</p>
+        <h2 ><%= @book.title %></h2>
+        <p>by <strong style="color: #333;"><%= @book.author %></strong></p>
+        <p>Genre: <strong style="color: #333;"><%= @book.genre %></strong></p>
+        <p>Price: <strong style="color: #333;"><%= @book.price %></strong> $</p>
 
         <p>
           <% if @book.availability %>
@@ -25,13 +25,13 @@
       </div>
 
       <!-- Button section -->
-      <div class="button-group" style="display: flex; gap: 10px; margin-top: 20px;">
-      <%= link_to 'Back to overview', books_path, style: "padding: 10px 20px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none; display: inline-block;" %>
+      <div class="button-group">
+      <%= link_to 'Back to overview', books_path, class: "back-to-overview-link" %>
 
       <% button_color = @book.availability ? '#28a745' : '#6c757d' %>
       <% clickable = @book.availability ? '' : 'pointer-events: none;' %>
 
-        <%= link_to 'Make a booking', new_book_booking_path(@book), style: "padding: 10px 20px; color: white; background-color: #{button_color}; border-radius: 5px; text-decoration: none; display: inline-block; #{clickable}" %>
+        <%= link_to 'Make a booking', new_book_booking_path(@book), class: "make-a-booking-link", style: "padding: 10px 20px; color: white; background-color: #{button_color}; border-radius: 5px; text-decoration: none; display: inline-block; #{clickable}" %>
 
         <!-- adding a delete button and perhaps we need an edit btn -->
         <%= link_to content_tag(:i, "", class: "fa-solid fa-pencil"), edit_book_path(@book) %>
@@ -51,14 +51,14 @@
   </div>
   
 <div data-controller="review-form" id="review_form" style="margin-top:20px">
-    <button data-action="click->review-form#toggle" style="margin-left: auto; padding: 10px 20px; color: white; background-color: #D7C3F1; border-radius: 5px; border: none;">Add a review</button>
+    <button data-action="click->review-form#toggle", class="button-review-toggle">Add a review</button>
     <div data-review-form-target="form" class="d-none">
       <%= form_with(model: [@book, @book.reviews.new], data: { action: "turbo:submit-end->review-form#submitEnd" }) do |form| %>
         <div class="form-group" style="margin-bottom: 10px;">
           <%= form.label :content, "Your Review" %>
           <%= form.text_area :content, rows: 4, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
         </div>
-        <%= form.submit "Submit Review", style: "padding: 10px 20px; color: white; background-color: #28a745; border-radius: 5px; border: none;" %>
+        <%= form.submit "Submit Review", class: "submit-form"%>
       <% end %>
     </div>
   </div>

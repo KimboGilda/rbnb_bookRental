@@ -1,21 +1,44 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <h1 class="text-primary" class="mb-0">All Books Available</h1>
-    <%= link_to "➕ Add a new book", new_book_path, class: "btn btn-flat" %>
+    <h1 class="mb-0">Available Books </h1>
+    <%= link_to "Add a new book", new_book_path, class: "btn btn-book" %>
   </div>
-  <div class="row">
-    <% @books.each do |book| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to book_path(book), class:"text-decoration-none" do %>
-          <div class="mb-0" class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3)">
-           <h4  class="text-dark"> <%= book.title %> </h4>
-           <p class="text-dark"> <%= book.author %> </p>
-           <p  class="text-dark" > <%= book.price %> </p>
-           <%# <p class="text-dark"> <%= book.availability %>
-           <%# <p> <%= book.genre %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Title, Author, Price" %>
+        <%= button_tag(type: 'submit', class: "btn btn-primary ms-2") do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="movies" class="row mt-5">
+        <% if @books.any? %>
+          <% @books.each do |book| %>
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-5">
+            <%= link_to book_path(book), class:"text-decoration-none" do %>
+              <div class="card-books mb-3" style="height: 60%; min-height: 200px;">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="card-title flex-grow-1"><%= book.title %></h4>
+                    <p class="card-text"><%= book.author %></p>
+                    <p class="card-price"><%= book.price %> <i class="fa-solid fa-euro-sign"></i> / day</p>
+                  </div>
+              </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="col-12">
+            <em>Sorry, no books found.</em>
           </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

@@ -7,5 +7,13 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :genre, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  # validates :availability
+  include PgSearch::Model
+
+  pg_search_scope :search_by_title_author_and_price,
+  against: [ :title, :author, :price ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
+
 end

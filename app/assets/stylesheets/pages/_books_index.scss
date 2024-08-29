@@ -1,0 +1,98 @@
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #708090;
+  margin-bottom: 0;
+}
+
+.btn.btn-book {
+  background-color: #708090;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-book:hover,
+.btn.btn-flat:hover {
+  background-color: #008080;
+  color: #fff;
+}
+
+// Search bar
+form.d-flex {
+  width: 100%;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 10px 10px;
+  border: 1px solid #708090;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #708090;
+  box-shadow: none;
+}
+
+.btn.btn-primary {
+  background-color: #708090;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background-color: #008080;
+}
+
+.card-books {
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  min-height: 250px;
+}
+
+.card-books .card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-books .card-text {
+  font-size: 15px;
+}
+
+.card-books .card-price {
+  font-size: 13px;
+  color: #008080;
+}
+
+.card-books .card-body {
+  padding: 20px;
+}
+
+.card-books:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.col-sm-3.mb-5 {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+h4.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
