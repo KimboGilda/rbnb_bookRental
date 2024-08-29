@@ -1,29 +1,29 @@
-/* Container and Page Layout */
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-h1.text-primary {
-  font-size: 20px;
+h1 {
+  font-size: 24px;
   font-weight: bold;
-  color: #007bff;
+  color: #708090;
   margin-bottom: 0;
 }
 
 .btn.btn-book {
-  background-color: #007bff;
+  background-color: #708090;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
+.btn.btn-book:hover,
 .btn.btn-flat:hover {
-  background-color: #0056b3; /* Darker shade of blue for hover effect */
+  background-color: #008080;
   color: #fff;
 }
 
@@ -33,29 +33,29 @@ form.d-flex {
 }
 
 .form-control {
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px 10px;
-  border: 1px solid #007bff; /* Primary Bootstrap blue color */
+  border: 1px solid #708090;
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
 .form-control:focus {
-  border-color: #0056b3;
+  border-color: #708090;
   box-shadow: none;
 }
 
 .btn.btn-primary {
-  background-color: #007bff;
+  background-color: #708090;
   border: none;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 20px;
   font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
 .btn.btn-primary:hover {
-  background-color: #094b92;
+  background-color: #008080;
 }
 
 // Book Card Styling
@@ -81,7 +81,7 @@ form.d-flex {
 
 .card-books .card-price {
   font-size: 13px;
-  color: rgb(81, 14, 182);
+  color: #008080;
 }
 
 .card-books .card-body {
@@ -93,17 +93,12 @@ form.d-flex {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Column Adjustment */
 .col-sm-3.mb-5 {
-  flex: 0 0 30%; /* Adjust the column width to make the cards wider */
+  flex: 0 0 30%;
   max-width: 30%;
 }
 
 h4.card-title {
-  font-size: 1.25rem; /* Adjust font size for better fit */
+  font-size: 20px;
   margin-bottom: 10px;
-}
-
-.card-text {
-  font-size: 1rem; /* Ensure text size is readable within the wider card */
 }
