@@ -53,16 +53,15 @@ form.d-flex {
   background-color: #008080;
 }
 
-// Book Card Styling
 .card-books {
   padding: 15px;
   text-decoration: none;
   color: black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; /* Make the card take up full width of the column */
-  min-height: 250px; /* Ensure enough height for the content */
+  width: 100%;
+  min-height: 250px;
 }
 
 .card-books .card-title {
