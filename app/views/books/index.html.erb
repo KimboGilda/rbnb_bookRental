@@ -8,8 +8,10 @@
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
       <%= form_with url: books_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find your next book" %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary ms-2" %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Title, Author, Price" %>
+        <%= button_tag(type: 'submit', class: "btn btn-primary ms-2") do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
