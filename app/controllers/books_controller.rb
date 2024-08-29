@@ -1,3 +1,5 @@
+require "open-uri"
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :destroy]
 
@@ -47,6 +49,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :genre, :price, :availability, :user_id)
+    params.require(:book).permit(:title, :author, :genre, :price, :availability, :user_id, :photo)
   end
 end
