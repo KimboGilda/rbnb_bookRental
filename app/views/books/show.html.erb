@@ -20,22 +20,6 @@
       <p><%= @book.summary %></p>
     </div>
     
-    <!-- Info section -->
-    <div class="book-info">
-      <div>
-        <h2 ><%= @book.title %></h2>
-        <p>by <strong style="color: #333;"><%= @book.author %></strong></p>
-        <p>Genre: <strong style="color: #333;"><%= @book.genre %></strong></p>
-        <p>Price: <strong style="color: #333;"><%= @book.price %></strong> $</p>
-
-        <p>
-          <% if @book.availability %>
-            <span style="color: #28a745; font-weight: bold;">Available for renting</span>
-          <% else %>
-            <span style="color: #dc3545; font-weight: bold;">Not Available for renting</span>
-          <% end %>
-        </p>
-      </div>
 
       <!-- Button section -->
       <div class="button-group">
