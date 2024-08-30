@@ -7,7 +7,11 @@
 
 .book-image {
   flex: 1 1 40%;
-  margin-right: 20px;
+  // margin-right: 20px;
+  width: 180px;
+  height: 270px;
+  border-radius: 10px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, .1);
 }
 
 .book-info {
@@ -31,10 +35,20 @@
 .back-to-overview-link {
   padding: 10px 20px;
   color: white;
-  background-color: #708090;
-  border-radius: 5px;
+  // background-color: #708090;
+  border-radius: 5px; 
   text-decoration: none;
   display: inline-block;
+  font-size: 14px;
+  background-color: #008080;
+  box-shadow: 0 0 16px rgba(0, 0, 0, .1);
+
+}
+
+
+.back-to-overview-link:hover {
+  background-color: #005a5a;
+
 }
 
 .button-review-toggle {

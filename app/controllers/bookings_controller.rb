@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @books = Book.all
     @bookings = current_user.bookings
     @users = User.all
+
   end
   def new
     @book = Book.find(params[:book_id])
