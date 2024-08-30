@@ -8,35 +8,19 @@
         <%= f.input :author %>
         <%= f.input :genre %>
         <%= f.input :price %>
+        <%= f.input :summary %>
         <%= f.input :availability,
                   :as => :select,
                   :collection => [['Available', true],['Not available', false]],
                   :include_blank => false,
                   :label => "Type" %>
-        <%= f.submit %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Update", class: "back-to-overview-link" %>
       <% end %>
       <!-- Button section -->
       <div class="button-group" style="display: flex; gap: 10px; margin-top: 20px;">
-        <%= link_to "Back to book list", books_path %>
+        <%= link_to "Back to book list", books_path, class: "back-to-overview-link" %>
       </div>
     </div>
   </div>
 </div>
-
- <!-- <div class="container">
-  <h1>Editing "<%= @book.title %>"</h1>
-  <%= simple_form_for(@book) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :author %>
-  <%= f.input :genre %>
-  <%= f.input :price %>
-  <%= f.input :availability,
-            :as => :select,
-            :collection => [['Available', true],['Not available', false]],
-            :include_blank => false,
-            :label => "Type" %>
-  <%= f.submit %>
-<% end %>
-</div>
-
--->

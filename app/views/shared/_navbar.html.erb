@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon w-100">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://media.istockphoto.com/id/182675742/nl/foto/books.jpg?s=1024x1024&w=is&k=20&c=hPTrAtUNUSdEaOEYT958ovb302_Bp2JUo8R2BGfNYv0=" %>
@@ -10,31 +10,32 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item active">
-            <%# <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-links"%>
           </li>
           <li class="nav-item">
-            <%= link_to "Books", books_path, class: "nav-link" %>
+            <%= link_to "Books", books_path, class: "nav-links" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Bookings", my_bookings_path, class: "nav-link" %>
-              <%# book_bookings.path %>
+            <%= link_to "Bookings", my_bookings_path, class: "nav-links" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.profile_picture.nil? %>
+            <%= image_tag "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%# book_bookings.path %>
               <%= link_to "Account", "#", class: "dropdown-item" %>
-              <%= link_to "Log in", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
             </div>
           </li>
-        <%else%>
+        <% else %>
           <li class="nav-item">
-           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
-        <%end%>
+        <% end %>
       </ul>
     </div>
   </div>
