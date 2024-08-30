@@ -44,8 +44,8 @@
         <%= link_to 'Make a booking', new_book_booking_path(@book), class: "make-a-booking-link", style: "padding: 10px 20px; color: white; background-color: #{button_color}; border-radius: 5px; text-decoration: none; display: inline-block; #{clickable}" %>
 
         <!-- adding a delete button and perhaps we need an edit btn -->
-        <%= link_to content_tag(:i, "", class: "fa-solid fa-pencil"), edit_book_path(@book) %>
-        <%= link_to content_tag(:i, "", class: "fa-solid fa-trash"),
+        <%= link_to content_tag(:i, "", class: "fa-solid fa-pencil ms-2", style:"color: black"), edit_book_path(@book) %>
+        <%= link_to content_tag(:i, "", class: "fa-solid fa-trash ms-2" , style:"color: black"),
           book_path(@book),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
