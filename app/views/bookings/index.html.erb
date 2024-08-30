@@ -16,7 +16,7 @@
                 <%= User.find(booking.user_id).first_name %>
                 <%= User.find(booking.user_id).last_name  %>
                 <%= link_to content_tag(:i, "", class: "fa-solid fa-trash"),
-                  booking_path(booking),
+                  booking_path(booking), style: "color:#708090; font-size: 16px; margin-left: 10px;",
                   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
                 %>
               </li>
