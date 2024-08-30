@@ -14,17 +14,17 @@
 .nav-links {
   font-weight: 700;
   text-decoration: none;
-    align-items: center;
-    border-bottom-width: 1px;
-    color: hsl(250, 18%, 20%);
-    display: flex;
-    justify-content: center;
-    margin-bottom: -1px;
-    padding: .5em 1em;
-    vertical-align: top;
-    font-size: 1rem !important;
+  align-items: center;
+  border-bottom-width: 1px;
+  color: hsl(250, 18%, 20%);
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1px;
+  padding: 0.5em 1em;
+  vertical-align: top;
+  font-size: 1rem !important;
 }
-.nav-links:hover{
-  color: rgb(255, 166, 0);
+.nav-links:hover {
+  color: #008080;
   transform: scale(1.2);
 }
