@@ -1,13 +1,17 @@
 body {
-  background-color: #ffffff; /* Light grayish blue */
-  color: #333; /* Ensure text remains readable against the light background */
+  background-color: #ffffff;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   color: #000000;
   margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
 .btn.btn-book {
