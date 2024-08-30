@@ -1,0 +1,93 @@
+.add-a-new-book-button {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.add-a-new-book-button:hover {
+  opacity: 1;
+}
+
+// .make-a-booking-button {
+//   color: white;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   margin-left: auto;
+//   display: inline-block; #{clickable}
+//   background: #{button_color};
+//   border: none;
+//   text-decoration: none;
+//   transition: background 0.3s ease;
+// }
+
+// .make-a-booking-button :hover {
+//   background: #0e041f;
+//   color: white;
+// }
+
+
+.add-a-review-button {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: auto;
+  background: #D7C3F1;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.add-a-review-button:hover {
+  background: #0e041f;
+  color: white;
+}
+
+
+.go-back-button {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #3b7884;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.go-back-button:hover {
+  background: #0e041f;
+  color: white;
+}
+
+.back-to-the-overview-button {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #3b7884;
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.back-to-the-overview-button :hover {
+  background: #0e041f;
+  color: white;
+}
+
+.submit-review-button {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #28a745;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.submit-review-button:hover {
+  background: #0e041f;
+  color: white;
+}

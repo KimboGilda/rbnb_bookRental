@@ -1,21 +1,22 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h1 class="text-primary" class="mb-0">All Books Available</h1>
-    <%= link_to "➕ Add a new book", new_book_path, class: "btn btn-flat" %>
+    <%= link_to "➕ Add a new book", new_book_path, class: "add-a-new-book-button" %>
   </div>
+
   <div class="row">
-    <% @books.each do |book| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to book_path(book), class:"text-decoration-none" do %>
-          <div class="mb-0" class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3)">
-           <h4  class="text-dark"> <%= book.title %> </h4>
-           <p class="text-dark"> <%= book.author %> </p>
-           <p  class="text-dark" > <%= book.price %> </p>
-           <%# <p class="text-dark"> <%= book.availability %>
-           <%# <p> <%= book.genre %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+   <% @books.each do |book| %>
+     <div class="card m-3">
+      <%= link_to book_path(book), class:"text-decoration-none" do %>
+
+        <%= image_tag("https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg",
+        class:"card-image" )
+        %>
+        <h5><%= book.title %></h5>
+        <p><%= book.author %></p>
+        <p><%= book.price %></p>
+   <% end %>
+        </div>
+   <% end %>
+ </div >
 </div>

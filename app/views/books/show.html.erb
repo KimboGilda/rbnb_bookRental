@@ -26,7 +26,7 @@
 
       <!-- Button section -->
       <div class="button-group" style="display: flex; gap: 10px; margin-top: 20px;">
-      <%= link_to 'Back to overview', books_path, style: "padding: 10px 20px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none; display: inline-block;" %>
+      <%= link_to 'Back to overview', books_path, class: "back-to-the-overview-button" %>
 
       <% button_color = @book.availability ? '#28a745' : '#6c757d' %>
       <% clickable = @book.availability ? '' : 'pointer-events: none;' %>
@@ -49,18 +49,17 @@
       <%= render partial: "reviews/review", locals: { review: review } %>
     <% end %>
   </div>
-  
+
 <div data-controller="review-form" id="review_form" style="margin-top:20px">
-    <button data-action="click->review-form#toggle" style="margin-left: auto; padding: 10px 20px; color: white; background-color: #D7C3F1; border-radius: 5px; border: none;">Add a review</button>
+    <button data-action="click->review-form#toggle" class="add-a-review-button" >Add a review</button>
     <div data-review-form-target="form" class="d-none">
       <%= form_with(model: [@book, @book.reviews.new], data: { action: "turbo:submit-end->review-form#submitEnd" }) do |form| %>
         <div class="form-group" style="margin-bottom: 10px;">
           <%= form.label :content, "Your Review" %>
           <%= form.text_area :content, rows: 4, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
         </div>
-        <%= form.submit "Submit Review", style: "padding: 10px 20px; color: white; background-color: #28a745; border-radius: 5px; border: none;" %>
+        <%= form.submit "Submit Review", class:"submit-review-button" %>
       <% end %>
     </div>
   </div>
 </div>
-

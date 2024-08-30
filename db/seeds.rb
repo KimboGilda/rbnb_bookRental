@@ -99,4 +99,3 @@ book_01 = Book.create!(
 # #     user: user_02,
 # #     book: book_01
 # #   )
-
