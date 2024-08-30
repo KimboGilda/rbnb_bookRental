@@ -1,7 +1,12 @@
+body {
+  background-color: #ffffff; /* Light grayish blue */
+  color: #333; /* Ensure text remains readable against the light background */
+}
+
 h1 {
   font-size: 24px;
   font-weight: bold;
-  color: #708090;
+  color: #000000;
   margin-bottom: 0;
 }
 
@@ -83,8 +88,9 @@ form.d-flex {
 }
 
 .card-books:hover {
-  background-color: #f8f9fa;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #d8ecec;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .col-sm-3.mb-5 {
