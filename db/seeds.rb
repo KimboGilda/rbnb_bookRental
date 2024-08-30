@@ -51,7 +51,7 @@ book_01 = Book.create!(
     price: 50.5,
     availability: false,
     user: user_01,
-    cover_image: open("https://covers.openlibrary.org/b/isbn/9788595086081-M.jpg")
+    cover_image: "https://covers.openlibrary.org/b/isbn/9788595086081-M.jpg"
   )
 
   book_02 =Book.create!(

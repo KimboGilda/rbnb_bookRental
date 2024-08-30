@@ -1,3 +1,5 @@
+// ----------- BANNER ----------------------
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -83,5 +85,28 @@
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// ----------- CAROUSEL ----------------------
+
+.books-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+
+  .book-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .book-cover {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
   }
 }
