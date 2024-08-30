@@ -1,2 +1,71 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1550648/pexels-photo-1550648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+  <div class="container">
+    <h1>Discover Your Next Favorite Book!</h1>
+    <p>Change your life by discovering and collecting books.</p>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <div class="cards">
+      <div class="card">
+        <img src="https://img.freepik.com/free-vector/where-concept-illustration_114360-8670.jpg?   t=st=1724936510~exp=1724940110~hmac=d5dd8d2a93b35b875d3735e538edabf5268ca228f727f4b80507513c863a7ee2&w=740" alt="Looking?" class="card-img">
+
+        <div class="text-small">
+          <h3>Looking for new adventures?</h3>
+          <p>Time to explore our latest collection of books! Always updated for your convenience.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-vector/sentiment-analysis-concept-illustration_114360-5242.jpg?    t=st=1724937184~exp=1724940784~hmac=9ca3d15fc12360b480b7ccbc68763741ee4c8d096e99c2f6035891bbff590bf6&w=740" alt="Reviews" class="card-img">
+
+        <div class="text-small">
+          <h3>Read the reviews</h3>
+          <p>Not really convinced? Read our most honest reviews.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-vector/no-time-concept-illustration_114360-4209.jpg?t=st=1724939638~exp=1724943238~hmac=bd14ebad12895ec10ea90013ffbd03cf3ad76be87a8b0f9a0799a8eb6a058fb6&w=740" alt="Booking" class="card-img">
+
+        <div class="text-small">
+          <h3>Make a booking!</h3>
+          <p>Make sure you're booking as soon as possible or you may miss out on your desired book!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-2">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Explore our books!</h3>
+  </div>
+</div>
+
+<div id="bookCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 1550px; margin: 0 auto;">
+  <div class="carousel-inner d-flex">
+    <% @books.each_slice(4).with_index do |books_slice, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <div class="d-flex justify-content-center" style="gap: 20px;">
+          <% books_slice.each do |book| %>
+            <div class="text-center">
+              <%= image_tag book.cover_image, alt: book.title, style: "width: 250px; height: 350px; object-fit: cover; display: block;" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
