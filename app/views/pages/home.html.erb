@@ -37,3 +37,26 @@
     </div>
   </div>
 </div>
+
+<div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <% @books.each_with_index do |book, index| %>
+      <div class="carousel-item <%= 'active' if index == 0 %>">
+        <%= image_tag book.cover_image, class: "d-block w-100", alt: book.title %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5><%= book.title %></h5>
+          <p><%= book.author %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
