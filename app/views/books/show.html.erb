@@ -19,12 +19,29 @@
 
       <p><%= @book.summary %></p>
     </div>
+    
+    <!-- Info section -->
+    <div class="book-info">
+      <div>
+        <h2 ><%= @book.title %></h2>
+        <p>by <strong style="color: #333;"><%= @book.author %></strong></p>
+        <p>Genre: <strong style="color: #333;"><%= @book.genre %></strong></p>
+        <p>Price: <strong style="color: #333;"><%= @book.price %></strong> $</p>
 
-    <!-- Button section -->
-    <div class="button-group">
-      <%= link_to 'Back to overview', books_path, class: "back-to-overview-link" %>
+        <p>
+          <% if @book.availability %>
+            <span style="color: #28a745; font-weight: bold;">Available for renting</span>
+          <% else %>
+            <span style="color: #dc3545; font-weight: bold;">Not Available for renting</span>
+          <% end %>
+        </p>
+      </div>
 
-      <% button_color = @book.availability ? '#28a745' : '#6c757d' %>
+      <!-- Button section -->
+      <div class="button-group">
+      <%= link_to 'Back to overview', books_path, class: "btn btn-book" %>
+
+      <% button_color = @book.availability ? '#389568;' : '#6c757d' %>
       <% clickable = @book.availability ? '' : 'pointer-events: none;' %>
 
       <%= link_to 'Make a booking', new_book_booking_path(@book), class: "make-a-booking-link", style: "padding: 10px 15px; font-size: 14px; color: white; background-color: #{button_color}; border-radius: 5px; text-decoration: none; display: inline-block; #{clickable}" %>
@@ -48,8 +65,6 @@
   </div>
 
 </div>
-
-
   <!-- Reviews section -->
   <div id="reviews" class="reviews" data-review-form-target="reviews" style="margin-top: 40px;">
     <% @book.reviews.each do |review| %>
@@ -62,8 +77,7 @@
     <div data-review-form-target="form" class="d-none">
       <%= form_with(model: [@book, @book.reviews.new], data: { action: "turbo:submit-end->review-form#submitEnd" }) do |form| %>
         <div class="form-group" style="margin-bottom: 10px;">
-          <%= form.label :content, "Your Review" %>
-          <%= form.text_area :content, rows: 4, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
+          <%= form.text_area :content, rows: 4, style: "margin-top: 10px; width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
         </div>
         <%= form.submit "Submit Review", class: "submit-form", style: "padding: 10px 15px; font-size: 14px"%>
       <% end %>

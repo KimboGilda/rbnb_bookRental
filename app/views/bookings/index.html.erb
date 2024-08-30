@@ -3,29 +3,35 @@
     <!-- Info section -->
     <div class="book-info" style="flex: 1 1 60%; display: flex; flex-direction: column; justify-content: space-between;">
         <h1>Bookings</h1>
-        <% if @bookings.length == 0  %>
-          <p style="padding-top: 20px;">No bookings</p>
-        <% else %>
-          <ul class='bookings-list'>
-            <% @bookings.each do |booking| %>
-              <li class='bookings'>
-                <%= Book.find(booking.book_id).title %>
-                is booking for
-                <%= booking.start_date %> -
-                <%= booking.end_date %> by user
-                <%= User.find(booking.user_id).first_name %>
-                <%= User.find(booking.user_id).last_name  %>
-                <%= link_to content_tag(:i, "", class: "fa-solid fa-trash"),
-                  booking_path(booking), style: "color:#708090; font-size: 16px; margin-left: 10px;",
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
-              </li>
-            <% end %>
-          <% end %>
+        <ul class="list-unstyled">
+       
+          <% @bookings.each do |booking| %>
+            <li class="m-3 p-3 border rounded">
+              <div class="d-flex justify-content-between align-items-center">
+              <strong class="h5 mb-0"><%= Book.find(booking.book_id).title %></strong>
+      <%= link_to content_tag(:i, "", class: "fa-solid fa-trash", style: "color:black"),
+        booking_path(booking),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "btn btn-outline-danger btn-sm"
+      %>
+    </div>
+    <hr class="my-2">
+    <div class="d-flex justify-content-between">
+      <div class="text-muted">
+        <i class="fa-solid fa-calendar-alt me-2"></i>
+        <%= booking.start_date %> - <%= booking.end_date %>
+      </div>
+      <div class="fw-semibold">
+        <i class="fa-solid fa-user me-2"></i>
+        <%= User.find(booking.user_id).first_name %> <%= User.find(booking.user_id).last_name %>
+      </div>
+    </div>
+  </li>
+<% end %>
         </ul>
       <!-- Button section -->
         <div class="button-group" style="display: flex; gap: 10px; margin-top: 20px;">
-          <%= link_to "Back to book list", books_path,  class: "back-to-overview-link" %>
+          <%= link_to "Back to book list", books_path, class: "btn btn-book"%>
         </div>
     </div>
   </div>

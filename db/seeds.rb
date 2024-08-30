@@ -24,6 +24,7 @@ user_01 = User.create!(
     password: "wimbledon13",
     first_name: 'Maria',
     last_name: "Sarapova",
+    profile_picture: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQF1OLdIQ262byvZOwohTsqrBedYYMrwunw7BPelkg3X4-BM7ZW"
   )
 
   user_02 = User.create!(
@@ -31,6 +32,7 @@ user_01 = User.create!(
     password: "aa13uk",
     first_name: 'Emma',
     last_name: "Goldman",
+    profile_picture: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcR-YjPx0YjDeF6-MEyDHOSr8ZQuhGQaHCdTxy1JXdoxP0W2Pg-BiXotcwC5QPdt_bWowPugRGHjo7MYshY4bs6irlM-WHoXdTIE4_T4sZPhzegThYeKNE6sQka_1dTkWP4MqFCpR5P8"
   )
 
   user_03 = User.create!(
@@ -38,6 +40,7 @@ user_01 = User.create!(
     password: "olivia2024",
     first_name: 'Olivia',
     last_name: "Martin",
+    profile_picture: "https://cdn.canvasrebel.com/wp-content/uploads/2023/07/c-PersonalOliviaMartin__IMG2706_1688392668767.jpeg"
 )
 
 user_04 = User.create!(
@@ -61,7 +64,6 @@ book_01 = Book.create!(
     summary: "The Hobbit is set in Middle-earth and follows home-loving Bilbo Baggins, the hobbit of the title, who joins the wizard Gandalf and the thirteen dwarves of Thorin's Company, on a quest to reclaim the dwarves' home and treasure from the dragon Smaug.",
 
     cover_image: "https://covers.openlibrary.org/b/isbn/9788595086081-M.jpg"
-
   )
 
   book_02 = Book.create!(

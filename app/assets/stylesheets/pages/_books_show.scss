@@ -52,18 +52,31 @@
 }
 
 .button-review-toggle {
-  margin-left: auto;
-  padding: 10px 20px;
-  color: white;
-  background-color: #008080;
-  border-radius: 5px;
+  background-color: #389568;
+  color: #fff;
   border: none;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
 }
 
 .submit-form {
-  padding: 10px 20px;
   color: white;
-  background-color: #28a745;
-  border-radius: 5px;
+  background-color: #296a98;
   border: none;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
 }
