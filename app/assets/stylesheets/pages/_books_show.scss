@@ -11,7 +11,7 @@
   width: 180px;
   height: 270px;
   border-radius: 10px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
 .book-info {
@@ -41,14 +41,10 @@
   display: inline-block;
   font-size: 14px;
   background-color: #008080;
-  
-
 }
-
 
 .back-to-overview-link:hover {
   background-color: #005a5a;
-
 }
 
 .button-review-toggle {
